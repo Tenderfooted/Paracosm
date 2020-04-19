@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OverworldEnemy : MonoBehaviour
 {
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class OverworldEnemy : MonoBehaviour
         if(col.tag == "Player")
         {
             Debug.Log("PlayerEntered");
-            gameManager.BattleSceneOn();
+            GameManager.BattleSceneOn();
             
         }
     }

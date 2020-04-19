@@ -7,6 +7,19 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Player;
 	private Vector3 offset;
+	public static CameraScript instance;
+
+	void Awake()
+	{
+		if (instance != null)
+        {
+            Destroy (gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+	}
  	// Use this for initialization
 	void Start () {
 	Player = GameObject.FindGameObjectWithTag("Player");
