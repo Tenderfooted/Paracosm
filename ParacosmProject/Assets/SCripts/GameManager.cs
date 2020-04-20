@@ -27,12 +27,12 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    public static void BattleSceneOn()
+    public static void BattleSceneOn(OverworldEnemy currentEnemy)
     {
         MainScene.instance.gameObject.SetActive(false);
         BattleScene.instance.gameObject.SetActive(true);
         BattleScene.instance.transform.position = CameraScript.instance.transform.position;        //moves the camera to the battlescene position.
-        BattleScene.instance.InitiateCombat();
+        BattleScene.instance.InitiateCombat(currentEnemy);
     }
     public static void BattleSceneOff()
     {

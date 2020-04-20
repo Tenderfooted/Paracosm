@@ -9,7 +9,9 @@ public class BattleScene : MonoBehaviour
     public GameObject Camera;
 
 	private Vector3 offset;
-    playertime
+    public float playertime;                // the time the player is on    when it reaches the players cast time it performs the action
+    float enemytime;                        // the current time the enemy is on when it equals their cast time they perform their action
+    bool TimerActive;                       //  is used to check if the turn is counting down*
     
  	// Use this for initialization
 	void Awake()						// set up for battle scene to become a singleton if required later on
@@ -39,9 +41,10 @@ public class BattleScene : MonoBehaviour
         GameManager.BattleSceneOff();
 
     }
-    public void InitiateCombat()
+    public void InitiateCombat(OverworldEnemy Enemy)
     {
-
+        TimerActive = false;
+        
     }
 
 }
