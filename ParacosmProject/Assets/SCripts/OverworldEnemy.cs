@@ -10,7 +10,7 @@ public class OverworldEnemy : MonoBehaviour
     public float health;
     public float attack;
     public float damage;
-    public Action[] attack1;
+    //public Action[] attack1;
 
 
     // Start is called before the first frame update
