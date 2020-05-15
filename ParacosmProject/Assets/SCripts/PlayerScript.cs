@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
                 }
                 else
                 {
-                //_rigidbody.AddForce(transform.right *(_V * (MoveSpeed* .5f)));
+                _rigidbody.AddForce(transform.right *(_V * (MoveSpeed* .75f)));
                 }
                 break;
             /*case Movetype.movepos:

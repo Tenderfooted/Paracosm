@@ -13,6 +13,7 @@ public class BattleScene : MonoBehaviour
 
 
 
+    private OverworldEnemy currentEnemy;
 	public static BattleScene instance;
     public GameObject Camera;
 
@@ -52,13 +53,14 @@ public class BattleScene : MonoBehaviour
 	//transform.position = Camera.transform.position ;	
         if ( playersct > playerct)
         {
-            //Debug.Log("timeMoving");
+            Debug.Log("timeMoving");
             Time.timeScale = 1.0f;
             playerct += playerspeed * Time.deltaTime;
             enemyct += playerspeed * Time.deltaTime;
             if(playerct > playersct)
             {
-                Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be 
+                Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
+                 
             }
             if(enemyct > enemysct)
             {
@@ -67,11 +69,24 @@ public class BattleScene : MonoBehaviour
                 enemysct =4.0f;                              // **place holder** for enemy ability putting in its cast time, 
             }
         }
-        else Time.timeScale = 0.0f;
+        else 
+        {
+            Time.timeScale = 0.0f;
+            Debug.Log("time Frozen");
+        }
         ActionBar.value = ActionBar.value + (playerspeed* Time.deltaTime);
         if(ActionBar.value >= 20)
         {
             ActionBar.value = 0.0f;
+        }
+        Debug.Log(currentEnemy.health);
+        if (currentEnemy.health <= 0.0f )
+        {
+            Debug.Log(currentEnemy.health);                                         //something wacky is going on -- I had a comma at the end of my if statement
+
+            EnemyDeath();
+            Debug.Log(" the enemies current health was too low!!");
+
         }
         //else Debug.Log("timepaused");
 	    
@@ -79,7 +94,7 @@ public class BattleScene : MonoBehaviour
     public void EnemyDeath()
     {
         GameManager.BattleSceneOff();
-
+        currentEnemy.Death();
     }
     public void InitiateCombat(OverworldEnemy Enemy)
     {
@@ -87,6 +102,7 @@ public class BattleScene : MonoBehaviour
         enemysspeed = Enemy.speed;
         playersct = 0.0f;
         playerct = 0.01f;
+        currentEnemy = Enemy;
         
     }
     public void TestAbilityPlaceholder()
@@ -101,6 +117,7 @@ public class BattleScene : MonoBehaviour
         }
         PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
     }
+
 
     // combat PsuedoCode:
     /* Player enters combat. Player enters their move while time is frozen, nothing happens in this state.

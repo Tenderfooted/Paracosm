@@ -32,11 +32,12 @@ public class GameManager : MonoBehaviour
         MainScene.instance.gameObject.SetActive(false);
         BattleScene.instance.gameObject.SetActive(true);
         BattleScene.instance.transform.position = CameraScript.instance.transform.position;        //moves the camera to the battlescene position.
-        BattleScene.instance.InitiateCombat(currentEnemy);
+        BattleScene.instance.InitiateCombat(currentEnemy);                                         // 
     }
     public static void BattleSceneOff()
     {
         MainScene.instance.gameObject.SetActive(true);
-        BattleScene.instance.gameObject.SetActive(false);
+        BattleScene.instance.gameObject.SetActive(false);   // turns off the combat                                                   
+         // will need to record the current enemy fighting so we can execute them after
     }
 }
