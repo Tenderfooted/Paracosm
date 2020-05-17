@@ -113,7 +113,7 @@ public class BattleScene : MonoBehaviour
         Debug.Log("PewPew Chosen");
         playerct = 0.0f;
         playersct = 5.0f;
-        float iconpos = ActionBar.value + Time.deltaTime * 5.0f;
+        float iconpos = ActionBar.value + 5.0f;
         if(iconpos > 20)
         {
             iconpos = iconpos-20;
