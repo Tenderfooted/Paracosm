@@ -63,7 +63,7 @@ public class BattleScene : MonoBehaviour
             if(playerct > playersct)
             {
                 Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
-                currentEnemy.health = currentEnemy.health - 5.0f;
+                currentEnemy.health = currentEnemy.health - PlayerScript.strength;
             }
             if(enemyct > enemysct)
             {
@@ -113,7 +113,19 @@ public class BattleScene : MonoBehaviour
         Debug.Log("PewPew Chosen");
         playerct = 0.0f;
         playersct = 5.0f;
-        float iconpos = ActionBar.value + 5.0f;
+        float iconpos = ActionBar.value + playersct;
+        if(iconpos > 20)
+        {
+            iconpos = iconpos-20;
+        }
+        PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
+    }
+    public void StrengthUp()
+    {
+        Debug.Log("Strewth");
+        playerct = 0.0f;
+        playersct = 1.0f;
+        float iconpos = ActionBar.value + playersct;
         if(iconpos > 20)
         {
             iconpos = iconpos-20;

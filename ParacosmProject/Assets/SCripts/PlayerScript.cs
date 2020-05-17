@@ -18,8 +18,9 @@ public class PlayerScript : MonoBehaviour
     public float raycastDistance = 0.05f;
     public float JumpForce;
     //public LayerMask raycastMask;
-    int health = 3;
-    int mana = 5;
+    public static int health = 3;
+    public static int mana = 5;
+    public static int strength = 2;
     // Start is called before the first frame update
     void Start()
     {
