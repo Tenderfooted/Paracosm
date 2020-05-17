@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private float timeprevious;
+    public bool ispaused;
+    GameObject helddialogue;    // an easy way to turn off the dialogue with esc, by passing the dialogue from the npc to this variable we can turn it off later! :3
     
     // Start is called before the first frame update
     void Awake()
@@ -51,4 +54,43 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);                  // this will probably be shunted to a Load/save manager later when that exists :p
         BattleScene.instance.gameObject.SetActive(false);       // wtf I dont need to tell it where to find the battleScene? I dont remember making it static..
     }
+      public void Pause()
+    {
+        // this will open the pause menu and pause the game
+        // first record current delta time, this is so it cant be used to bug combat speed
+        //then set delta time to 0
+        //when esc has been selected then the set delta time to its previous value
+        timeprevious = Time.timeScale;
+        Time.timeScale = 0.0f;
+        PauseMenu.instance.gameObject.SetActive(true);
+        ispaused = true;
+        
+    }
+    public void Resume()
+    {
+        Time.timeScale = timeprevious;
+        PauseMenu.instance.gameObject.SetActive(false);
+         SkillMenu.instance.gameObject.SetActive(false);
+        if(helddialogue != null)
+        {
+            helddialogue.SetActive(false);              // if there is dialogue held then it is turned off when the player wants to resume.
+        }
+        ispaused = false;
+    }
+    public void SkillMenuOpen()
+    {
+        timeprevious = Time.timeScale;
+        Time.timeScale = 0.0f;
+        SkillMenu.instance.gameObject.SetActive(true);
+        ispaused = true;
+    }
+    public void DialogueOpen(GameObject dialogue)               // recieves the dialogue gameobject from the npctriggerscript, enables it and pauses time
+    {
+
+        timeprevious = Time.timeScale;
+        Time.timeScale = 0.0f;
+        dialogue.SetActive(true);
+        ispaused = true;
+    }
+
 }
