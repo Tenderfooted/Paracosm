@@ -60,7 +60,7 @@ public class BattleScene : MonoBehaviour
             if(playerct > playersct)
             {
                 Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
-                 
+                currentEnemy.health = currentEnemy.health - 5.0f;
             }
             if(enemyct > enemysct)
             {
