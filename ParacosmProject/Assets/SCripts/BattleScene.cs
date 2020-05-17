@@ -41,11 +41,14 @@ public class BattleScene : MonoBehaviour
             instance = this;
 			Debug.Log("BattleScene instance set");
         }
+        gameObject.SetActive(false);
 	}
 	void Start () {
 	Camera = GameObject.FindGameObjectWithTag("MainCamera");
     ActionbarStart = playerIcon.transform.position; 
-	
+                         // lil cheeky way to set the battlescene to inactive as soon as the scene loads
+                                                    //   ^^ will probably need to be removed for another method when loading is implemented otherwise you couldnt load into combat.
+                                                        //^^ isnt an issue for checkpoint based loading
 	}
 	
 	// Update is called once per frame
