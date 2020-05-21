@@ -30,6 +30,8 @@ public class BattleScene : MonoBehaviour
     // bool TimerActive;                       //  is used to check if the turn is counting down*
     
  	// Use this for initialization
+
+    enum ability {none, Attack,}
 	void Awake()						// set up for battle scene to become a singleton if required later on
     {
         if (instance != null)
@@ -65,7 +67,7 @@ public class BattleScene : MonoBehaviour
                 Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
                 currentEnemy.health = currentEnemy.health - PlayerScript.strength;
             }
-            if(enemyct > enemysct)
+            if(enemyct > enemysct)                          // << this means enemies cant cast unless the player fails to cast prolly not a big deal but still kinda dumb
             {
                 Debug.Log("Enemy Ability cast, OH NO");     // **place holder ** for the enemies ability animation/effects being played
                 enemyct = 0.00f;
@@ -110,27 +112,33 @@ public class BattleScene : MonoBehaviour
     }
     public void TestAbilityPlaceholder()
     {
-        Debug.Log("PewPew Chosen");
-        playerct = 0.0f;
-        playersct = 5.0f;
-        float iconpos = ActionBar.value + playersct;
-        if(iconpos > 20)
+        if( TimeScale > 0.0f)
         {
-            iconpos = iconpos-20;
+            Debug.Log("PewPew Chosen");            // if time is moving then the ability cant be moved anymore
+            playerct = 0.0f;
+            playersct = 5.0f;
+            float iconpos = ActionBar.value + playersct;
+            if(iconpos > 20)
+            {
+                iconpos = iconpos-20;
+            }
+            PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
         }
-        PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
     }
     public void StrengthUp()
     {
-        Debug.Log("Strewth");
-        playerct = 0.0f;
-        playersct = 1.0f;
-        float iconpos = ActionBar.value + playersct;
-        if(iconpos > 20)
+        if (TimeScale > 0.0f)                       // if time is moving then the ability cant be activated anymore
         {
-            iconpos = iconpos-20;
+            Debug.Log("Strewth");
+            playerct = 0.0f;
+            playersct = 1.0f;
+            float iconpos = ActionBar.value + playersct;
+            if(iconpos > 20)
+            {
+                iconpos = iconpos-20;
+            }
+            PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
         }
-        PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
     }
 
 
@@ -189,6 +197,10 @@ public class BattleScene : MonoBehaviour
     ^this wont work as Lerp Works on a range of 0-1
     I want to simply move a box to the right but I dont know how to do that in UI ;-;
     Screw that jazz Im just gonna use a slider with a value of 0-40 and custom images
+
+
+
+
 
 
 

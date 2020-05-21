@@ -88,9 +88,10 @@ public class GameManager : MonoBehaviour
     {
 
         timeprevious = Time.timeScale;
-        Time.timeScale = 0.0f;
+        //Time.timeScale = 0.0f;                    // un comment this to make dialogue pause the game!
         dialogue.SetActive(true);
         ispaused = true;
     }
+
 
 }
