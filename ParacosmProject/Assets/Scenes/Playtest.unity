@@ -3638,6 +3638,8 @@ MonoBehaviour:
   PlayerActionIcon: {fileID: 537502789}
   playerIcon: {fileID: 1409339778}
   ActionbarStart: {x: 0, y: 0, z: 0}
+  enemies: []
+  spawnpoints: []
   Camera: {fileID: 0}
   playerct: 0
   playersct: 0
@@ -3923,6 +3925,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBunn
       objectReference: {fileID: 0}
+    - target: {fileID: 5239687026487305726, guid: 140028603166c1a4e8b5d58b2a6c04bb,
+        type: 3}
+      propertyPath: enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239687026487305726, guid: 140028603166c1a4e8b5d58b2a6c04bb,
+        type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 6096753567499379896, guid: e800d31fc41f4a24bbf8f7413c109c23,
+        type: 3}
+    - target: {fileID: 5239687026487305726, guid: 140028603166c1a4e8b5d58b2a6c04bb,
+        type: 3}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 6096753567499379896, guid: e800d31fc41f4a24bbf8f7413c109c23,
+        type: 3}
+    - target: {fileID: 5239687026487305726, guid: 140028603166c1a4e8b5d58b2a6c04bb,
+        type: 3}
+      propertyPath: enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 6096753567499379896, guid: e800d31fc41f4a24bbf8f7413c109c23,
+        type: 3}
     - target: {fileID: 5239687026487305727, guid: 140028603166c1a4e8b5d58b2a6c04bb,
         type: 3}
       propertyPath: m_IsTrigger

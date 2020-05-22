@@ -11,15 +11,16 @@ public class BattleScene : MonoBehaviour
     public GameObject playerIcon;                   //this is used purely to set the starting position for action bar UI elements, pretty Dodgy I know
     public Vector3 ActionbarStart;
 
+    public BattleEnemy[] enemies;
+    public GameObject[] spawnpoints;                // this is an array that grabs all the spawn points from the battlescene<< will later be populated by grabbing all tagged spawnpoints when moving to a scene based battle system.
 
-
-    private OverworldEnemy currentEnemy;
+    private OverworldEnemy oldovenemy;
 	public static BattleScene instance;
     public GameObject Camera;
 
-	private Vector3 offset; 
+	private Vector3 offset;                                     // Forgive me 
 
-    public float playerct;                // the time the player is on    when it reaches the players cast time it performs the action
+    public float playerct;                // the time the player is on    when it reaches the players cast time it performs the action These var names f*cking suck so hopefully Ill fix it later
     public float playersct;               // the current cast time of the skill determines how far along the action bar the player must move before casting
 
     public float playerspeed = 1;               // the players speed, determines how fast they move on the action bar
@@ -31,7 +32,6 @@ public class BattleScene : MonoBehaviour
     
  	// Use this for initialization
 
-    enum ability {none, Attack,}
 	void Awake()						// set up for battle scene to become a singleton if required later on
     {
         if (instance != null)
@@ -60,35 +60,48 @@ public class BattleScene : MonoBehaviour
         {
             Debug.Log("timeMoving");
             Time.timeScale = 1.0f;
-            playerct += playerspeed * Time.deltaTime;
-            enemyct += playerspeed * Time.deltaTime;
+            playerct += playerspeed * Time.deltaTime;               // maybe this sucks. I should look into it :/ prolly wont tho
+            for( int i = 0; i <enemies.Length; i++)                 // goes through each enemy and ticks up their timer. maybe speed should affect cast times and not the timers, so the action bar can be more accurate??:"[]
+            {
+                enemies[i].currenttime += enemies[i].speed * Time.deltaTime;
+            }
             if(playerct > playersct)
             {
                 Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
-                currentEnemy.health = currentEnemy.health - PlayerScript.strength;
+                enemies[1].health = enemies[1].health - PlayerScript.strength;      // place holder to remove the health from the second enemy for testing
+                enemies[1].HealthbarUpdate();                   // this has to be called to update the healthbar to reflect the change in hp!
             }
-            if(enemyct > enemysct)                          // << this means enemies cant cast unless the player fails to cast prolly not a big deal but still kinda dumb
+            
+            for(int i = 0; i < enemies.Length ; i ++)
             {
-                Debug.Log("Enemy Ability cast, OH NO");     // **place holder ** for the enemies ability animation/effects being played
+                if (enemies[i].currenttime >enemies[i].casttime)
+                {
+                    Debug.Log("ability casting?");
+                    enemies[i].selectedAbility();        // selected ability is a delegate that is assigned a method when enemies[?].AbilityChoose is called
+                    enemies[i].currenttime = 0;
+                    enemies[i].AbilityChoose(); // I think these should be here. I really should have rewritten that psuedo code. this is to much for me to improvise :()
+
+                    // ^^ Got no errors after writing all this new combat stuff up. Now I am fearful. I shudder at each warning symbol. surely delegates arent that easy.
+                }
+            }
+            /*if(enemyct > enemysct)                          // << this means enemies cant cast unless the player fails to cast prolly not a big deal but still kinda dumb
+            {
+                Debug.Log("overworldEnemy Ability cast, OH NO");     // **place holder ** for the enemies ability animation/effects being played
                 enemyct = 0.00f;
                 enemysct =4.0f;                              // **place holder** for enemy ability putting in its cast time, 
-            }
+            }           */          // << old code for when there was a single enemy. will now check all enemy and execute their chosen abilities!
         }
         else 
         {
             Time.timeScale = 0.0f;
-            Debug.Log("time Frozen");
         }
         ActionBar.value = ActionBar.value + (playerspeed* Time.deltaTime);
         if(ActionBar.value >= 20)
         {
             ActionBar.value = 0.0f;
         }
-        Debug.Log(currentEnemy.health);
-        if (currentEnemy.health <= 0.0f )
+        if (enemies[1].health <= 0.0f )                       // this needs a revamp me thinks :/
         {
-            Debug.Log(currentEnemy.health);                                         //something wacky is going on -- I had a comma at the end of my if statement
-
             EnemyDeath();
             Debug.Log(" the enemies current health was too low!!");
 
@@ -99,25 +112,39 @@ public class BattleScene : MonoBehaviour
     public void EnemyDeath()
     {
         GameManager.BattleSceneOff();
-        currentEnemy.Death();
+        oldovenemy.Death();
     }
-    public void InitiateCombat(OverworldEnemy Enemy)
+    public void InitiateCombat(OverworldEnemy overworldEnemy)
     {
         //TimerActive = false;                              outdated timeractive boolean method for setting the time
-        enemysspeed = Enemy.speed;
+        Debug.Log("combat Initiating");
+        enemies = new BattleEnemy[overworldEnemy.enemies.Length];
+
+        enemies = overworldEnemy.enemies;
+        for (int i = 0; i < enemies.Length ; i++)
+        {   
+            Debug.Log(i);
+            if( enemies[i] != null && spawnpoints[i] != null)
+            {
+                enemies[i] = Instantiate(overworldEnemy.enemies[i], spawnpoints[i].transform);  
+                Debug.Log("Instantiating!" + i);
+                enemies[i].AbilityChoose();
+            }
+        } 
+        //enemysspeed = overworldEnemy.speed;
         playersct = 0.0f;
         playerct = 0.01f;
-        currentEnemy = Enemy;
+        // oldovenemy = overworldEnemy;
         
     }
     public void TestAbilityPlaceholder()
     {
-        if( TimeScale > 0.0f)
+        if( Time.timeScale == 0.0f)                                             // checks time is frozen so players cant spam the button like monkeys. ofc i<0 and i>0 will both return false when i=0 what is wrong with me
         {
-            Debug.Log("PewPew Chosen");            // if time is moving then the ability cant be moved anymore
+            Debug.Log("PewPew Chosen");                                         // if time is moving then the ability cant be moved anymore
             playerct = 0.0f;
             playersct = 5.0f;
-            float iconpos = ActionBar.value + playersct;
+            float iconpos = ActionBar.value + (playersct + ((playerspeed * playersct) *Time.deltaTime));
             if(iconpos > 20)
             {
                 iconpos = iconpos-20;
@@ -127,7 +154,7 @@ public class BattleScene : MonoBehaviour
     }
     public void StrengthUp()
     {
-        if (TimeScale > 0.0f)                       // if time is moving then the ability cant be activated anymore
+        if (Time.timeScale > 0.0f)                       // if time is moving then the ability cant be activated anymore
         {
             Debug.Log("Strewth");
             playerct = 0.0f;
@@ -141,7 +168,8 @@ public class BattleScene : MonoBehaviour
         }
     }
 
-
+    // ** alot of psuedocode below is outdated and no longer the plan, Check psuedo code file for diagrams that are also outdated! Delegates and additional classes are the plan now
+    //    and absurd amounts of greater/lesser than checks in the update loop. Im sorry for the strain this causes ones mind
     // combat PsuedoCode:
     /* Player enters combat. Player enters their move while time is frozen, nothing happens in this state.
     when the player enters their move the enemy also picks a move from their list of moves, 

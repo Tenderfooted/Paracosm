@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         MainScene.instance.gameObject.SetActive(false);                                            // turns mainscene object and all its children inactive
         BattleScene.instance.gameObject.SetActive(true);                                           // turns the Battlescebe abd all its children active
-        BattleScene.instance.transform.position = CameraScript.instance.transform.position;        //moves the camera to the battlescene position.
+        BattleScene.instance.transform.position = CameraScript.instance.transform.position;        //moves the battle scene to the camera position
         BattleScene.instance.InitiateCombat(currentEnemy);                                         // passes the battlescene the enemy the player just encountered.
     }
     public static void BattleSceneOff()

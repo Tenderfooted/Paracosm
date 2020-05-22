@@ -1,22 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+public class MushEnemy : BattleEnemy 
+{ 
+            // Enemies now inherit certain variables and methods from the BattleEnemy Class!
 
-public class MushEnemy  : MonoBehaviour
-{
-    string name = "Mush Monster";               // so we can display the name in combat
-    float health = 5;
-    float speed= 5;
-    string[] abilities= {HeavyAttack, SlowAttack};              //this is where names of ability methods are kept so they may be sent to the battelscene later
-    
-    void Start()
+    public override void AbilityChoose()
     {
-        
+        selectedAbility = HeavyAttack;              // puts a method into the delegate Selected ability (+which is inherited) so that it can be executed from the battleScene later
+        casttime = 4;                           // at the moment cast time has to be set when the ability is chosen. hopefully Ill think of a more elegant way to do this but it probably wont matter that much
+        Debug.Log("ability chosen!");
+        //return SelectedAbility;
+    } 
+    public  void HeavyAttack()
+    {
+        Debug.Log("HEVYATTACK");
+        //heavy attack
     }
-
-    // Update is called once per frame
-    void Update()
+    public  void SlowAttack()
     {
-        
+        // well then lmao
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class OverworldEnemy : MonoBehaviour
 {
     //public GameManager gameManager;
@@ -10,8 +9,10 @@ public class OverworldEnemy : MonoBehaviour
     public float health = 5;
     public float attack = 5;
     public float damage = 5;
+
     //public Action[] attack1;
 
+    public BattleEnemy[] enemies;
 
     // Start is called before the first frame update
     void Start()
