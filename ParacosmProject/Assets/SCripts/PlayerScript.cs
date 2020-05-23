@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour
     public static int health = 3;
     public static int mana = 5;
     public static int strength = 2;
+    public PlayerBattle battleCharacter;
     // Start is called before the first frame update
     void Start()
     {

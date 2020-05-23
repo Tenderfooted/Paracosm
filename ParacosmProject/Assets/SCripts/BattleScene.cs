@@ -11,14 +11,18 @@ public class BattleScene : MonoBehaviour
     public GameObject playerIcon;                   //this is used purely to set the starting position for action bar UI elements, pretty Dodgy I know
     public Vector3 ActionbarStart;
 
+    public PlayerBattle player;                     // this will be the player character that appears in the battle scene.
     public BattleEnemy[] enemies;
     public GameObject[] spawnpoints;                // this is an array that grabs all the spawn points from the battlescene<< will later be populated by grabbing all tagged spawnpoints when moving to a scene based battle system.
+    public GameObject playerspawn;
 
     private OverworldEnemy oldovenemy;
 	public static BattleScene instance;
     public GameObject Camera;
 
 	private Vector3 offset;                                     // Forgive me 
+
+
 
     public float playerct;                // the time the player is on    when it reaches the players cast time it performs the action These var names f*cking suck so hopefully Ill fix it later
     public float playersct;               // the current cast time of the skill determines how far along the action bar the player must move before casting
@@ -58,7 +62,6 @@ public class BattleScene : MonoBehaviour
 	//transform.position = Camera.transform.position ;	
         if ( playersct > playerct)
         {
-            Debug.Log("timeMoving");
             Time.timeScale = 1.0f;
             playerct += playerspeed * Time.deltaTime;               // maybe this sucks. I should look into it :/ prolly wont tho
             for( int i = 0; i <enemies.Length; i++)                 // goes through each enemy and ticks up their timer. maybe speed should affect cast times and not the timers, so the action bar can be more accurate??:"[]
@@ -114,13 +117,15 @@ public class BattleScene : MonoBehaviour
         GameManager.BattleSceneOff();
         oldovenemy.Death();
     }
-    public void InitiateCombat(OverworldEnemy overworldEnemy)
+    public void InitiateCombat(OverworldEnemy overworldEnemy,PlayerScript overworldPlayer)
     {
         //TimerActive = false;                              outdated timeractive boolean method for setting the time
         Debug.Log("combat Initiating");
         enemies = new BattleEnemy[overworldEnemy.enemies.Length];
 
         enemies = overworldEnemy.enemies;
+        player = Instantiate(overworldPlayer.battleCharacter, playerspawn.transform);
+        player.BattleInitiate();
         for (int i = 0; i < enemies.Length ; i++)
         {   
             Debug.Log(i);

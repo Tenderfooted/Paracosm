@@ -31,7 +31,7 @@ public class OverworldEnemy : MonoBehaviour
         if(col.tag == "Player")
         {
             Debug.Log("PlayerEntered");
-            GameManager.BattleSceneOn(this);
+            GameManager.BattleSceneOn(this, col.GetComponent<PlayerScript>());
             
         }
     }
