@@ -16,6 +16,7 @@ public class MushEnemy : BattleEnemy
     public  void HeavyAttack()
     {
         Debug.Log("HEVYATTACK");
+        PlayerBattle.health -= .5f;
 
         //heavy attack
     }

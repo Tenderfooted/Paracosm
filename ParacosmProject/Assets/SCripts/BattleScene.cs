@@ -60,19 +60,23 @@ public class BattleScene : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 	//transform.position = Camera.transform.position ;	
-        if ( playersct > playerct)
+        if (player.selectedAbility != null)
         {
             Time.timeScale = 1.0f;
-            playerct += playerspeed * Time.deltaTime;               // maybe this sucks. I should look into it :/ prolly wont tho
+            player.currenttime += player.speed * Time.deltaTime;               // maybe this sucks. I should look into it :/ prolly wont tho
             for( int i = 0; i <enemies.Length; i++)                 // goes through each enemy and ticks up their timer. maybe speed should affect cast times and not the timers, so the action bar can be more accurate??:"[]
             {
                 enemies[i].currenttime += enemies[i].speed * Time.deltaTime;
             }
-            if(playerct > playersct)
+            if(player.currenttime > player.casttime)
             {
-                Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
+                player.selectedAbility(enemies[1]);
+                player.AbilityClear();
+                player.currenttime = 0;
+               /* Debug.Log("PlayerAbility cast!");            // **place holder** for whatever method will need to eb called to do the player ability may be
                 enemies[1].health = enemies[1].health - PlayerScript.strength;      // place holder to remove the health from the second enemy for testing
-                enemies[1].HealthbarUpdate();                   // this has to be called to update the healthbar to reflect the change in hp!
+                enemies[1].HealthbarUpdate();                   // this has to be called to update the healthbar to reflect the change in hp! 
+                */
             }
             
             for(int i = 0; i < enemies.Length ; i ++)
@@ -81,6 +85,7 @@ public class BattleScene : MonoBehaviour
                 {
                     Debug.Log("ability casting?");
                     enemies[i].selectedAbility();        // selected ability is a delegate that is assigned a method when enemies[?].AbilityChoose is called
+                    player.HealthbarUpdate();
                     enemies[i].currenttime = 0;
                     enemies[i].AbilityChoose(); // I think these should be here. I really should have rewritten that psuedo code. this is to much for me to improvise :()
 
@@ -97,8 +102,13 @@ public class BattleScene : MonoBehaviour
         else 
         {
             Time.timeScale = 0.0f;
+            player.AbilityChoose();
+            if(player.selectedAbility != null)
+            {
+                PlayerActionTickUpdate();
+            }
         }
-        ActionBar.value = ActionBar.value + (playerspeed* Time.deltaTime);
+        ActionBar.value = ActionBar.value + (playerspeed* Time.deltaTime);                  
         if(ActionBar.value >= 20)
         {
             ActionBar.value = 0.0f;
@@ -108,14 +118,14 @@ public class BattleScene : MonoBehaviour
             EnemyDeath();
             Debug.Log(" the enemies current health was too low!!");
 
-        }
+        } 
         //else Debug.Log("timepaused");
 	    
     }
     public void EnemyDeath()
     {
         GameManager.BattleSceneOff();
-        oldovenemy.Death();
+        //oldovenemy.Death();
     }
     public void InitiateCombat(OverworldEnemy overworldEnemy,PlayerScript overworldPlayer)
     {
@@ -137,8 +147,8 @@ public class BattleScene : MonoBehaviour
             }
         } 
         //enemysspeed = overworldEnemy.speed;
-        playersct = 0.0f;
-        playerct = 0.01f;
+        player.casttime = 0.0f;
+        player.currenttime = 0.01f;
         // oldovenemy = overworldEnemy;
         
     }
@@ -171,6 +181,16 @@ public class BattleScene : MonoBehaviour
             }
             PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
         }
+    }
+    public void PlayerActionTickUpdate()
+    {
+        Debug.Log("ActionbarTick!-----------------------------------------------");
+        float iconpos = ActionBar.value + player.casttime;
+            if(iconpos > 20)
+            {
+                iconpos = iconpos-20;
+            }
+        PlayerActionIcon.transform.position = new Vector3(ActionbarStart.x + iconpos, ActionbarStart.y, ActionbarStart.z);
     }
 
     // ** alot of psuedocode below is outdated and no longer the plan, Check psuedo code file for diagrams that are also outdated! Delegates and additional classes are the plan now

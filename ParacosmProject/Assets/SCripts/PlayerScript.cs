@@ -38,7 +38,22 @@ public class PlayerScript : MonoBehaviour
     {
         _V = Input.GetAxis("Horizontal");
         _Jump = Input.GetAxis("Jump"); 
-        switch (CurrentMovetype)
+        gameObject.transform.position = new Vector3(transform.position.x + ((_V *MoveSpeed) * Time.deltaTime), transform.position.y, transform.position.z); 
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(raycastOrigin.position, -transform.up, raycastDistance);
+        if (hit != null && hit.collider != null)                                                    //if they are
+        {
+            //Debug.Log("FloorTouched");
+            //_rigidbody.velocity += new Vector2(_V,_rigidbody.velocity.y) * MoveSpeed * Time.deltaTime ;  //allow them to move
+            _rigidbody.AddForce(transform.right *(_V * MoveSpeed)) ;              //velocity based ground movement
+            _rigidbody.AddForce(transform.up * (_Jump * JumpForce), ForceMode2D.Impulse);  									//allow them to jump
+        }         
+    }
+
+
+
+
+    /*switch (CurrentMovetype)
         {
             case Movetype.rcaddforce:
                 RaycastHit2D hit;
@@ -74,8 +89,6 @@ public class PlayerScript : MonoBehaviour
                     _rigidbody.AddForce(transform.up * (_Jump * (JumpForce * 1.25f)), ForceMode2D.Impulse);								//allow them to jump
                 }
                 break;
-            */
-        }
-          
-    }
+            
+        } */
 }

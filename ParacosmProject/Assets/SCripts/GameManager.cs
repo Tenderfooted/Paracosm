@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private float timeprevious;
     public bool ispaused;
     GameObject helddialogue;    // an easy way to turn off the dialogue with esc, by passing the dialogue from the npc to this variable we can turn it off later! :3
+    public hotkeys buttonpressed;           // this uses the hotkeys enum in PlayerBattle cs. It exists here so the buttons in the battle screeen can activate player abilities
     
     // Start is called before the first frame update
     void Awake()
@@ -92,6 +93,29 @@ public class GameManager : MonoBehaviour
         dialogue.SetActive(true);
         ispaused = true;
     }
+    public void buttonpressq()                                      // these are hopefully just place holders until a better hotkey system is made !!
+    {
+        PlayerBattle.abilityselected = hotkeys.q;
 
+    }
+        public void buttonpressw()
+    {
+        PlayerBattle.abilityselected = hotkeys.w;
+        
+    }
+        public void buttonpresse()
+    {
+        PlayerBattle.abilityselected = hotkeys.e;
+
+    }
+        public void buttonpressr()
+    {
+        PlayerBattle.abilityselected = hotkeys.r;
+        
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }
