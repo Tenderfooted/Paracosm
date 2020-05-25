@@ -16,7 +16,7 @@ public class BattleScene : MonoBehaviour
     public GameObject[] spawnpoints;                // this is an array that grabs all the spawn points from the battlescene<< will later be populated by grabbing all tagged spawnpoints when moving to a scene based battle system.
     public GameObject playerspawn;
 
-    private OverworldEnemy oldovenemy;
+    public OverworldEnemy oldovenemy;
 	public static BattleScene instance;
     public GameObject Camera;
 
@@ -125,7 +125,7 @@ public class BattleScene : MonoBehaviour
     public void EnemyDeath()
     {
         GameManager.BattleSceneOff();
-        //oldovenemy.Death();
+        oldovenemy.Death();
     }
     public void InitiateCombat(OverworldEnemy overworldEnemy,PlayerScript overworldPlayer)
     {

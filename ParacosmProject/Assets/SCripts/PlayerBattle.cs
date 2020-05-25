@@ -75,7 +75,7 @@ public class PlayerBattle : MonoBehaviour
     }
     public void SpeedUP(BattleEnemy Target)
     {
-        PlayerBattle.health += 2f;
+        PlayerBattle.health += 3f;
         HealthbarUpdate();
     }
     public void Ability3(BattleEnemy Target)
