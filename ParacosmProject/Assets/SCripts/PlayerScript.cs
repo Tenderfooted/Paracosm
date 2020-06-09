@@ -26,6 +26,11 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        if(GameManager.instance.Isload == true)
+        {
+            transform.position = GameManager.instance.savedata.playerloc;
+            GameManager.instance.Isload = false;
+        }
         
     }
 

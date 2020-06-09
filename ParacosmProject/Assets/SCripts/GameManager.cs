@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public bool ispaused;
     GameObject helddialogue;    // an easy way to turn off the dialogue with esc, by passing the dialogue from the npc to this variable we can turn it off later! :3
     public hotkeys buttonpressed;           // this uses the hotkeys enum in PlayerBattle cs. It exists here so the buttons in the battle screeen can activate player abilities
+    public SaveData savedata;
+    public bool Isload = false;
     
     // Start is called before the first frame update
     void Awake()
@@ -71,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = timeprevious;
         PauseMenu.instance.gameObject.SetActive(false);
-         SkillMenu.instance.gameObject.SetActive(false);
+        SkillMenu.instance.gameObject.SetActive(false);
         if(helddialogue != null)
         {
             helddialogue.SetActive(false);              // if there is dialogue held then it is turned off when the player wants to resume.
@@ -116,6 +119,55 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }   
+
+    // Set up and plan code for save function here
+    // load method that reads a json file for two numbers, first the build of the level to load, and secondly the number of the checkpoint to spawn the player at :/
+
+    // save function
+    // writes the checkpoint number and player number to a Json file
+
+    // the gamemanager will need to be able to find the checkpoint of the save spot.    alternate method. write the players X,Y,Z coordinates to json and the level, then we dont have to bother with the checkpoint system
+    // can add the players stats to this later
+    public void LoadGame()
+    {
+        Debug.Log("loading");
+        string json;
+        json = File.ReadAllText(Application.dataPath+"/saves/savedata.json");
+        savedata = JsonUtility.FromJson<SaveData>(json);
+        Debug.Log(savedata.playerloc);
+        Debug.Log(savedata.buildnum);
+        SceneManager.LoadScene(savedata.buildnum);
+        Isload = true;
     }
+    public void SaveGame()
+    {
+        Debug.Log("Saving");
+        Scene scene = SceneManager.GetActiveScene();
+        savedata = new SaveData();
+        savedata.buildnum = scene.buildIndex;
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Debug.Log("PLAYER FOUND LMO");
+        }
+        savedata.playerloc = player.transform.position;
+        string json = JsonUtility.ToJson(savedata);
+        File.WriteAllText(Application.dataPath+"/saves/savedata.json",json);
+
+    }
+    public void PlayerPush()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        player.transform.position = savedata.playerloc;
+        Destroy(player);
+        Instantiate(player, savedata.playerloc, Quaternion.identity);
+    }
+
+}
+public class SaveData
+{
+    public int buildnum = 0;
+    public Vector3 playerloc;
 
 }
