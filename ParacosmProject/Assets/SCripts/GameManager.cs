@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public hotkeys buttonpressed;           // this uses the hotkeys enum in PlayerBattle cs. It exists here so the buttons in the battle screeen can activate player abilities
     public SaveData savedata;
     public bool Isload = false;
+    private Vector3 storedcheckpointlocation;
     
     // Start is called before the first frame update
     void Awake()
@@ -138,6 +139,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(savedata.playerloc);
         Debug.Log(savedata.buildnum);
         SceneManager.LoadScene(savedata.buildnum);
+        storedcheckpointlocation = savedata.checkpoint;
         Isload = true;
     }
     public void SaveGame()
@@ -152,10 +154,25 @@ public class GameManager : MonoBehaviour
             Debug.Log("PLAYER FOUND LMO");
         }
         savedata.playerloc = player.transform.position;
+        savedata.checkpoint = storedcheckpointlocation;
         string json = JsonUtility.ToJson(savedata);
         File.WriteAllText(Application.dataPath+"/saves/savedata.json",json);
 
     }
+    public void CheckpointLoad(Vector3 checkpointlocation) // this is to force save the players last checkpoint location so they will spawn there when they die
+    {
+        storedcheckpointlocation = checkpointlocation;
+    }
+    public void LoadCheckpoint()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Debug.Log("PLAYER FOUND LMO");
+        }
+        player.transform.position = storedcheckpointlocation;
+    }
+
     public void PlayerPush()
     {
         GameObject player = GameObject.FindWithTag("Player");
@@ -169,5 +186,6 @@ public class SaveData
 {
     public int buildnum = 0;
     public Vector3 playerloc;
+    public Vector3 checkpoint;
 
 }

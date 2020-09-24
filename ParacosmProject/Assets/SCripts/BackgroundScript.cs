@@ -31,7 +31,7 @@ public class BackgroundScript : MonoBehaviour
 	void Start () 
     {
 	Player = GameObject.FindGameObjectWithTag("Player");
-	transform.position = new Vector3(Player.transform.position.x,transform.position.y/*Player.transform.position.y*/,transform.position.z);
+	//transform.position = new Vector3(Player.transform.position.x,transform.position.y/*Player.transform.position.y*/,transform.position.z);
 	offset = transform.position - Player.transform.position;
     oldpos = transform.position;	
 
@@ -40,13 +40,15 @@ public class BackgroundScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 	//transform.position = Player.transform.position + offset;
+    float dist = Player.transform.position.x * moverate;
 
     // plan for backgrounds
     // saves old position and new position to move to, 
 
     // saves the backgrounds starting position
     // moves halfway(or some value) between the old and new pos to move to
-    transform.position = new Vector2(oldpos.x + Player.transform.position.x * moverate, oldpos.y + Player.transform.position.y * moverate);
+    //transform.position = new Vector2(oldpos.x + Player.transform.position.x * moverate, oldpos.y + Player.transform.position.y * moverate);
+    transform.position = new Vector2(offset.x + dist, Player.transform.position.y)     ;
     }
 
 

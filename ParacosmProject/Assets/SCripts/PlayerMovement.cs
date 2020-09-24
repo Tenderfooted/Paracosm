@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_rigidbody.velocity);
+        //Debug.Log(_rigidbody.velocity);
         _V = Input.GetAxis("Horizontal");
         _Jump = Input.GetAxis("Jump");
         _Up = Input.GetAxis("Vertical");
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", _V * MoveSpeed);
         if (hit != null && hit.collider != null && reachGround == true)
         {
-            Debug.Log("GROUNDHIT");
+            //Debug.Log("GROUNDHIT");
             isFloat = false;
             animator.SetBool("IsJump", false);
             _rigidbody.gravityScale = defaultGravScale;
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isFloat == true && _rigidbody.velocity.y < 0.1f )               // this makes the character float at the apex of their jump
         {
-            Debug.Log("FLOATARGHHHHHHHHHHHHHHHHHHHH");
+            //Debug.Log("FLOATARGHHHHHHHHHHHHHHHHHHHH");
             _rigidbody.gravityScale = floatGrav;
             _rigidbody.drag = airDrag;
             if ( Input.GetKeyDown("space") && currentDash > 0)

@@ -1,0 +1,518 @@
+fileFormatVersion: 2
+guid: 2fbe11680c130564e80ad06c0b92aa49
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8603715422228030542
+    second: ENV ASSETS NIGHT SCENE_0
+  - first:
+      213: 8515057549245097381
+    second: ENV ASSETS NIGHT SCENE_1
+  - first:
+      213: 7090252034007085178
+    second: ENV ASSETS NIGHT SCENE_2
+  - first:
+      213: -7740379337325089377
+    second: ENV ASSETS NIGHT SCENE_3
+  - first:
+      213: 7512569781556510197
+    second: ENV ASSETS NIGHT SCENE_4
+  - first:
+      213: -4798903086052287134
+    second: ENV ASSETS NIGHT SCENE_5
+  - first:
+      213: -842254840848226734
+    second: ENV ASSETS NIGHT SCENE_6
+  - first:
+      213: -7323662574093358839
+    second: ENV ASSETS NIGHT SCENE_7
+  - first:
+      213: 9015539796258131820
+    second: ENV ASSETS NIGHT SCENE_8
+  - first:
+      213: -4528371018588037922
+    second: ENV ASSETS NIGHT SCENE_9
+  - first:
+      213: -6128875487206612388
+    second: ENV ASSETS NIGHT SCENE_10
+  - first:
+      213: -7889762306529060451
+    second: ENV ASSETS NIGHT SCENE_11
+  - first:
+      213: 1792156777768347264
+    second: ENV ASSETS NIGHT SCENE_12
+  - first:
+      213: -8593264930819381745
+    second: ENV ASSETS NIGHT SCENE_13
+  - first:
+      213: 536396726637983735
+    second: ENV ASSETS NIGHT SCENE_14
+  - first:
+      213: 8230877332811755297
+    second: ENV ASSETS NIGHT SCENE_15
+  - first:
+      213: -3297142692245784590
+    second: ENV ASSETS NIGHT SCENE_16
+  - first:
+      213: -3358264153645338847
+    second: ENV ASSETS NIGHT SCENE_17
+  - first:
+      213: -7488493898545207500
+    second: ENV ASSETS NIGHT SCENE_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_0
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 2873
+        height: 2274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb5c8d6866799880800000000000000
+      internalID: -8603715422228030542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_1
+      rect:
+        serializedVersion: 2
+        x: 3316
+        y: 1627
+        width: 448
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a523c0f9bf8b2670800000000000000
+      internalID: 8515057549245097381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_2
+      rect:
+        serializedVersion: 2
+        x: 3962
+        y: 1627
+        width: 448
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70bbfeb8a2a56260800000000000000
+      internalID: 7090252034007085178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_3
+      rect:
+        serializedVersion: 2
+        x: 4570
+        y: 1625
+        width: 447
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9de6f3c006a49490800000000000000
+      internalID: -7740379337325089377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_4
+      rect:
+        serializedVersion: 2
+        x: 5293
+        y: 1503
+        width: 588
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd720cb962024860800000000000000
+      internalID: 7512569781556510197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_5
+      rect:
+        serializedVersion: 2
+        x: 5973
+        y: 1513
+        width: 971
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dd354a11fd66db0800000000000000
+      internalID: -4798903086052287134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_6
+      rect:
+        serializedVersion: 2
+        x: 5736
+        y: 1501
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25663e84fa5bf44f0800000000000000
+      internalID: -842254840848226734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_7
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 826
+        width: 221
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909a758f0bf1d5a90800000000000000
+      internalID: -7323662574093358839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_8
+      rect:
+        serializedVersion: 2
+        x: 3885
+        y: 829
+        width: 201
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f0d56ada1ad1d70800000000000000
+      internalID: 9015539796258131820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_9
+      rect:
+        serializedVersion: 2
+        x: 4206
+        y: 826
+        width: 403
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcd2e90d8ef721c0800000000000000
+      internalID: -4528371018588037922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_10
+      rect:
+        serializedVersion: 2
+        x: 4709
+        y: 820
+        width: 498
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c526370773cd1faa0800000000000000
+      internalID: -6128875487206612388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_11
+      rect:
+        serializedVersion: 2
+        x: 5265
+        y: 822
+        width: 140
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d999115ebfee18290800000000000000
+      internalID: -7889762306529060451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_12
+      rect:
+        serializedVersion: 2
+        x: 5327
+        y: 190
+        width: 570
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086e0b818150fd810800000000000000
+      internalID: 1792156777768347264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_13
+      rect:
+        serializedVersion: 2
+        x: 5908
+        y: 211
+        width: 1022
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0660b113179eb880800000000000000
+      internalID: -8593264930819381745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_14
+      rect:
+        serializedVersion: 2
+        x: 3461
+        y: 275
+        width: 314
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f770fd1bf9a17700800000000000000
+      internalID: 536396726637983735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_15
+      rect:
+        serializedVersion: 2
+        x: 4067
+        y: 286
+        width: 258
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f2f0c3353f93270800000000000000
+      internalID: 8230877332811755297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS NIGHT SCENE_16
+      rect:
+        serializedVersion: 2
+        x: 4831
+        y: 228
+        width: 350
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f73aeeb0323e32d0800000000000000
+      internalID: -3297142692245784590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
