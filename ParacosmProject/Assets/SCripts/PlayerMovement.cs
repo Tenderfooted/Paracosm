@@ -1,20 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
+    public SpriteRenderer _spriteRenderer;
     bool isFloat = false;
     bool reachGround = false;       //this exists so we can test if the bool is hiting the ground
+
     public Transform raycastOrigin;
+    public int layerMask = 1 << 8;
     public float raycastDistance = 0.05f;
-    Rigidbody2D _rigidbody;  
+    Rigidbody2D _rigidbody;
+
     float _V = 0.0f;
     float _Jump = 0.0f;
     public float MoveSpeed = 12.0f;
     public float JumpStrength = 10f;
     float _Up = 0.0f;
+
+    public int health;
+    public int maxhealth;
+
+    public Image[] healthsprites;
+    public Sprite healthfull;
+    public Sprite healthempty;
+
 
     public float defaultGravScale;
 
@@ -33,22 +46,68 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody.drag = groundDrag;
         _rigidbody.gravityScale = defaultGravScale;
+        for( int i = 0; i < healthsprites.Length; i++)
+            {
+                if( i < maxhealth)
+                {
+                    healthsprites[i].enabled = true;
+                }
+                else
+                {
+                    healthsprites[i].enabled = false;
+                }
+            };
     }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(_rigidbody.velocity);
+
+        // stuff for hp 
+    
+
+        for (int i = 0; i < healthsprites.Length; i++)              // this updates the players heart count
+        {
+            if (i < health)
+            {
+                healthsprites[i].sprite = healthfull;
+            }
+            else
+            {
+                healthsprites[i].sprite = healthempty;
+            }
+        }
+        if( health <= 0)
+        {
+            health = 3;
+            GameManager.instance.LoadCheckpoint();
+        }
         _V = Input.GetAxis("Horizontal");
         _Jump = Input.GetAxis("Jump");
         _Up = Input.GetAxis("Vertical");
+
+        if(_V < 0.0f)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX = false;
+        }
+
+
+
         gameObject.transform.position = new Vector3(transform.position.x + ((_V *MoveSpeed) * Time.deltaTime), transform.position.y, transform.position.z); // the current code that controls movement
         RaycastHit2D hit;
         hit = Physics2D.Raycast(raycastOrigin.position, -transform.up, raycastDistance);
-        animator.SetFloat("Speed", _V * MoveSpeed);
-        if (hit != null && hit.collider != null && reachGround == true)
+        Debug.DrawRay(raycastOrigin.position, -transform.up);
+        animator.SetFloat("Speed", _V); // sends the players V input to the animator for the run animation. used to include the movespeed variable
+
+        if (hit != null && hit.collider != null)
         {
             //Debug.Log("GROUNDHIT");
             isFloat = false;
@@ -56,6 +115,22 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.gravityScale = defaultGravScale;
             animator.SetBool("IsDash", false);
             
+        }
+        else if (isFloat == false)
+        {
+            isFloat = true;
+            animator.SetBool("IsJump", true);
+        }
+        if ( isFloat == true && Input.GetKeyDown("space") && currentDash > 0)   // this allows the player to jump, used to be with the code that makes players float but meant players could only dash at the apex of their jump
+        {
+            _rigidbody.AddForce(new Vector2(_V, _Up) * dashStrength, ForceMode2D.Impulse);
+            currentDash--; 
+            if( currentDash <= 0)
+            {
+                isFloat = false; 
+                animator.SetBool("IsDash", true);
+                _rigidbody.gravityScale = defaultGravScale;
+            }
         }
         if (hit != null && hit.collider != null && Input.GetKeyDown("space"))    //checks that the player is on the ground, holding space and that they arent already vaulting
         {
@@ -67,26 +142,11 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJump", true);
 
         }  
-        if (hit != null && hit.collider == null)
-        {
-            reachGround = true;    // set to true so that the next animation can be called when the player hits the ground
-        }
         if (isFloat == true && _rigidbody.velocity.y < 0.1f )               // this makes the character float at the apex of their jump
         {
             //Debug.Log("FLOATARGHHHHHHHHHHHHHHHHHHHH");
             _rigidbody.gravityScale = floatGrav;
             _rigidbody.drag = airDrag;
-            if ( Input.GetKeyDown("space") && currentDash > 0)
-            {
-                _rigidbody.AddForce(new Vector2(_V, _Up) * dashStrength, ForceMode2D.Impulse);
-                currentDash--; 
-                if( currentDash <= 0)
-                {
-                    isFloat = false; 
-                    animator.SetBool("IsDash", true);
-                    _rigidbody.gravityScale = defaultGravScale;
-                }
-            }
         }
        
     }

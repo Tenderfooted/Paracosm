@@ -30,10 +30,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        if( BattleScene.instance != null)          //checks if battlescene exists before night nighting it
-        {
-            BattleScene.instance.gameObject.SetActive(false);                       // this flips the battlescene off, will probably need to be used as well when loading
-        }
+    
     }
     // Update is called once per frame
     void Update()
@@ -67,15 +64,15 @@ public class GameManager : MonoBehaviour
         //when esc has been selected then the set delta time to its previous value
         timeprevious = Time.timeScale;
         Time.timeScale = 0.0f;
-        PauseMenu.instance.gameObject.SetActive(true);
+       // PauseMenu.instance.gameObject.SetActive(true); pause menu script is kill
         ispaused = true;
         
     }
     public void Resume()
     {
         Time.timeScale = timeprevious;
-        PauseMenu.instance.gameObject.SetActive(false);
-        SkillMenu.instance.gameObject.SetActive(false);
+        //PauseMenu.instance.gameObject.SetActive(false);   pause menu is kill
+        //SkillMenu.instance.gameObject.SetActive(false); skill menu is kill
         if(helddialogue != null)
         {
             helddialogue.SetActive(false);              // if there is dialogue held then it is turned off when the player wants to resume.
@@ -86,7 +83,7 @@ public class GameManager : MonoBehaviour
     {
         timeprevious = Time.timeScale;
         Time.timeScale = 0.0f;
-        SkillMenu.instance.gameObject.SetActive(true);
+       // SkillMenu.instance.gameObject.SetActive(true); skill menu is kill
         ispaused = true;
     }
     public void DialogueOpen(GameObject dialogue)               // recieves the dialogue gameobject from the npctriggerscript, enables it and pauses time
@@ -141,6 +138,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(savedata.buildnum);
         storedcheckpointlocation = savedata.checkpoint;
         Isload = true;
+        StartCoroutine(PlayerPush());
+        Resume();
     }
     public void SaveGame()
     {
@@ -172,15 +171,12 @@ public class GameManager : MonoBehaviour
         }
         player.transform.position = storedcheckpointlocation;
     }
-
-    public void PlayerPush()
+    IEnumerator PlayerPush()
     {
+        yield return 0;
         GameObject player = GameObject.FindWithTag("Player");
         player.transform.position = savedata.playerloc;
-        Destroy(player);
-        Instantiate(player, savedata.playerloc, Quaternion.identity);
     }
-
 }
 public class SaveData
 {
