@@ -12,6 +12,8 @@ public class EnemyGhost : MonoBehaviour
     public float huntrange;
     float freezetimer = 3f;
     bool isfrozen = false;
+
+    public int health = 1;
     // Start is called before the first frame update
     // this is the simple version that simply moves towards the player 
     void Start()
@@ -25,6 +27,10 @@ public class EnemyGhost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
         if(isfrozen == true)
         {
             freezetimer = freezetimer - Time.deltaTime;
@@ -61,5 +67,10 @@ public class EnemyGhost : MonoBehaviour
             animator.SetBool("hunting", true);
             Debug.Log("hunting");
         }
+    }
+
+    public void DamageTaken(int damage)
+    {
+        health = health - damage;
     }
 }
