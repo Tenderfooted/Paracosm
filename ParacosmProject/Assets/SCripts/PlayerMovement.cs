@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float dashStrength;
 
+    private bool pdCoRunning = false; //this is so that only one dying coroutine runs at a time.
+
         // values for the Vault slerp here
 
     void Start()
@@ -68,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(_rigidbody.velocity);
 
         // stuff for hp 
+        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
     
 
         for (int i = 0; i < healthsprites.Length; i++)              // this updates the players heart count
@@ -81,10 +84,9 @@ public class PlayerMovement : MonoBehaviour
                 healthsprites[i].sprite = healthempty;
             }
         }
-        if( health <= 0)
+        if( health <= 0 && pdCoRunning == false)
         {
-            health = 3;
-            GameManager.instance.LoadCheckpoint();
+            StartCoroutine(PlayerDeath());
         }
         _V = Input.GetAxis("Horizontal");
         _Jump = Input.GetAxis("Jump");
@@ -163,5 +165,23 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.drag = airDrag;
         }
     }
-   
+    IEnumerator PlayerDeath()
+    {
+        pdCoRunning = true;
+        animator.SetTrigger("Dying");
+        yield return 0;
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length+animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        
+        health = 3;
+        GameManager.instance.LoadCheckpoint();
+        pdCoRunning = false;
+        yield break;
+    }
+    
+    void Death()
+    {
+        
+        health = 3;
+        GameManager.instance.LoadCheckpoint();
+    }
 }

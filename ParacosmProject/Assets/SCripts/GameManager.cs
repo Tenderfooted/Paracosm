@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         dialogue.SetActive(true);
         ispaused = true;
     }
-    public void buttonpressq()                                      // these are hopefully just place holders until a better hotkey system is made !!
+    /* public void buttonpressq()                                      // these are hopefully just place holders until a better hotkey system is made !!
     {
         PlayerBattle.abilityselected = hotkeys.q;
 
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerBattle.abilityselected = hotkeys.r;
         
-    }
+    }                                        old ability code, will probably delete later   */
     public void ExitGame()
     {
         Application.Quit();
