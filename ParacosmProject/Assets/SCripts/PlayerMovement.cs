@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool reachGround = false;       //this exists so we can test if the bool is hiting the ground
 
     public Transform raycastOrigin;
-    public int layerMask = 1 << 8;
+    public LayerMask Ground;
     public float raycastDistance = 0.05f;
     Rigidbody2D _rigidbody;
 
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed = 12.0f;
     public float JumpStrength = 10f;
     float _Up = 0.0f;
+    public float MoveSpeedLimiter;
 
     public int health;
     public int maxhealth;
@@ -27,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     public Image[] healthsprites;
     public Sprite healthfull;
     public Sprite healthempty;
+
+    public Image[] dashsprites;
+    public Sprite dashfull;
+    public Sprite dashempty;
 
 
     public float defaultGravScale;
@@ -61,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     healthsprites[i].enabled = false;
                 }
-            };
+            }
+        currentDash = airDashCount;
     }
 
     // Update is called once per frame
@@ -70,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(_rigidbody.velocity);
 
         // stuff for hp 
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        
     
 
         for (int i = 0; i < healthsprites.Length; i++)              // this updates the players heart count
@@ -82,6 +88,18 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 healthsprites[i].sprite = healthempty;
+            }
+        }
+        for ( int i = 0; i < dashsprites.Length; i++)
+        {
+            if ( i < currentDash)
+            {
+
+                dashsprites[i].sprite = dashfull;
+            }
+            else
+            {
+                dashsprites[i].sprite = dashempty;
             }
         }
         if( health <= 0 && pdCoRunning == false)
@@ -103,15 +121,16 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        gameObject.transform.position = new Vector3(transform.position.x + ((_V *MoveSpeed) * Time.deltaTime), transform.position.y, transform.position.z); // the current code that controls movement
+        // old movement codegameObject.transform.position = new Vector3(transform.position.x + ((_V *MoveSpeed) * Time.deltaTime), transform.position.y, transform.position.z); // the current code that controls movement
         RaycastHit2D hit;
-        hit = Physics2D.Raycast(raycastOrigin.position, -transform.up, raycastDistance);
+        hit = Physics2D.Raycast(raycastOrigin.position, -transform.up, raycastDistance, Ground);
         Debug.DrawRay(raycastOrigin.position, -transform.up);
         animator.SetFloat("Speed", _V); // sends the players V input to the animator for the run animation. used to include the movespeed variable
 
-        if (hit != null && hit.collider != null)
+        if (hit != null && hit.collider != null)  // checks that player is on the ground 
         {
             //Debug.Log("GROUNDHIT");
+            _rigidbody.velocity = new Vector3( MoveSpeed * _V , _rigidbody.velocity.y , 0);
             isFloat = false;
             animator.SetBool("IsJump", false);
             _rigidbody.gravityScale = defaultGravScale;
@@ -123,6 +142,11 @@ public class PlayerMovement : MonoBehaviour
             isFloat = true;
             animator.SetBool("IsJump", true);
         }
+        else
+        {
+            _rigidbody.AddForce(new Vector2( Mathf.Clamp(MoveSpeed *_V, -MoveSpeedLimiter , MoveSpeedLimiter),0));
+            Debug.Log(MoveSpeed*_V);
+        }
         if ( isFloat == true && Input.GetKeyDown("space") && currentDash > 0)   // this allows the player to jump, used to be with the code that makes players float but meant players could only dash at the apex of their jump
         {
             _rigidbody.AddForce(new Vector2(_V, _Up) * dashStrength, ForceMode2D.Impulse);
@@ -131,7 +155,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 isFloat = false; 
                 animator.SetBool("IsDash", true);
-                _rigidbody.gravityScale = defaultGravScale;
             }
         }
         if (hit != null && hit.collider != null && Input.GetKeyDown("space"))    //checks that the player is on the ground, holding space and that they arent already vaulting
@@ -184,4 +207,10 @@ public class PlayerMovement : MonoBehaviour
         health = 3;
         GameManager.instance.LoadCheckpoint();
     }
+    /* private Vector3 FlySpeed()
+    {
+        // calculates and caps the playes air movement speed
+        
+        Vector2 Airspeed = new Vector2( (MoveSpeed * _V )
+    } */
 }

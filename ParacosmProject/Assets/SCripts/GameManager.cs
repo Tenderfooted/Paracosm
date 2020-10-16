@@ -155,7 +155,8 @@ public class GameManager : MonoBehaviour
         savedata.playerloc = player.transform.position;
         savedata.checkpoint = storedcheckpointlocation;
         string json = JsonUtility.ToJson(savedata);
-        File.WriteAllText(Application.dataPath+"/saves/savedata.json",json);
+        //File.WriteAllText(Application.dataPath+"/saves/savedata.json",json);
+        File.WriteAllText(Application.persistentDataPath, json);
 
     }
     public void CheckpointLoad(Vector3 checkpointlocation) // this is to force save the players last checkpoint location so they will spawn there when they die
