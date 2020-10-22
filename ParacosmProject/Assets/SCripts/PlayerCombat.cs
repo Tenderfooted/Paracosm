@@ -35,7 +35,7 @@ public class PlayerCombat : MonoBehaviour
         
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyGhost>().DamageTaken(damage);
+            enemy.GetComponent<HitboxCode>().holder.DamageTaken(damage);
         }
 
     }
