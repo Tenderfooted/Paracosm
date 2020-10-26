@@ -16,4 +16,11 @@ public class HitboxCode : MonoBehaviour
     {
         
     }
+    void OnCollisionEnter2D(Collider2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            holder.DealDamage();
+        }
+    }
 }

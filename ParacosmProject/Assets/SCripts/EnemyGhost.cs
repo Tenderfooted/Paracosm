@@ -51,12 +51,12 @@ public class EnemyGhost : MonoBehaviour
                 hunting = false;
                 animator.SetBool("hunting", false);
             } */
-            if ( move.magnitude < 0.5f)
+            /*if ( move.magnitude < 0.5f)
             {
                 playerscript.health = playerscript.health - 1;
                 isfrozen = true;
                 animator.SetBool("hunting", false);
-           }
+           } */
         }
     }
     void OnTriggerEnter2D(Collider2D col)
@@ -72,5 +72,11 @@ public class EnemyGhost : MonoBehaviour
     public void DamageTaken(int damage)
     {
         health = health - damage;
+    }
+    public void DealDamage()
+    {
+        playerscript.health = playerscript.health - 1;
+        isfrozen = true;
+        animator.SetBool("hunting", false);
     }
 }

@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             isFloat = false;
             animator.SetBool("IsJump", false);
             _rigidbody.gravityScale = defaultGravScale;
-            animator.SetBool("IsDash", false);
+            //animator.SetBool("IsDash", false);
             
         }
         else if (isFloat == false)
@@ -151,10 +151,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector2(_V, _Up) * dashStrength, ForceMode2D.Impulse);
             currentDash--; 
+            animator.SetTrigger("IsDash");
             if( currentDash <= 0)
             {
                 isFloat = false; 
-                animator.SetBool("IsDash", true);
+                //animator.SetBool("IsDash", true);
             }
         }
         if (hit != null && hit.collider != null && Input.GetKeyDown("space"))    //checks that the player is on the ground, holding space and that they arent already vaulting
