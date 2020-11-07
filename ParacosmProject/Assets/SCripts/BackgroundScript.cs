@@ -48,7 +48,7 @@ public class BackgroundScript : MonoBehaviour
     // saves the backgrounds starting position
     // moves halfway(or some value) between the old and new pos to move to
     //transform.position = new Vector2(oldpos.x + Player.transform.position.x * moverate, oldpos.y + Player.transform.position.y * moverate);
-    transform.position = new Vector2(offset.x + dist, Player.transform.position.y)     ;
+    transform.position = new Vector2(offset.x + dist, Player.transform.position.y+2)     ;
     }
 
 

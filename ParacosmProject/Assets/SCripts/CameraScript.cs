@@ -23,7 +23,7 @@ public class CameraScript : MonoBehaviour
  	// Use this for initialization
 	void Start () {
 	Player = GameObject.FindGameObjectWithTag("Player");
-	transform.position = new Vector3(Player.transform.position.x,Player.transform.position.y,transform.position.z);
+	transform.position = new Vector3(Player.transform.position.x,Player.transform.position.y + 2,transform.position.z);
 	offset = transform.position - Player.transform.position;	
 
 	}

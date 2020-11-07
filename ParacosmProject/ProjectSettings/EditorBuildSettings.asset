@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/OldScenes/MainMenu.unity
     guid: 4dbde8e3377f0304f82cf004b3f84b67
+  - enabled: 1
+    path: Assets/Prefab/trailer Scenes/DayScene.unity
+    guid: b4716a326752f734bb909afee00a0d58
+  - enabled: 1
+    path: Assets/Prefab/trailer Scenes/NightScene.unity
+    guid: 9874313d9e510ac48a1106a481f2c285
+  - enabled: 1
+    path: Assets/Prefab/trailer Scenes/ForestScene.unity
+    guid: a45f08b657081f3408556a7163dbfd79
   - enabled: 1
     path: Assets/Scenes/Playtest.unity
     guid: 8e106c7b6bd9d864d86ef205a4bd40cb

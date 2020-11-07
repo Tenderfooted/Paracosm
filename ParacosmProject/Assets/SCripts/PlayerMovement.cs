@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _rigidbody.AddForce(new Vector2( Mathf.Clamp(MoveSpeed *_V, -MoveSpeedLimiter , MoveSpeedLimiter),0));
-            Debug.Log(MoveSpeed*_V);
+            //Debug.Log(MoveSpeed*_V);
         }
         if ( isFloat == true && Input.GetKeyDown("space") && currentDash > 0)   // this allows the player to jump, used to be with the code that makes players float but meant players could only dash at the apex of their jump
         {

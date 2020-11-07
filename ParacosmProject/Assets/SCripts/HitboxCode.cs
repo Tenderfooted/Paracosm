@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitboxCode : MonoBehaviour
 {
-    public EnemyGhost holder;
+    public EnemyClass holder;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class HitboxCode : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.CompareTag("Player"))
         {

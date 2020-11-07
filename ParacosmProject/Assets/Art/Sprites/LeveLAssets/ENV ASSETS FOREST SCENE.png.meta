@@ -1,7 +1,58 @@
 fileFormatVersion: 2
 guid: aeceee2ed3b0e5b4b99bddd4e1fdb31a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1283580835812967536
+    second: ENV ASSETS FOREST SCENE_0
+  - first:
+      213: 2117044138221061429
+    second: ENV ASSETS FOREST SCENE_1
+  - first:
+      213: 5625231490934958719
+    second: ENV ASSETS FOREST SCENE_2
+  - first:
+      213: 5345109879363645418
+    second: ENV ASSETS FOREST SCENE_3
+  - first:
+      213: 1939512391783426157
+    second: ENV ASSETS FOREST SCENE_4
+  - first:
+      213: -676956234410908848
+    second: ENV ASSETS FOREST SCENE_5
+  - first:
+      213: 3441739567908072127
+    second: ENV ASSETS FOREST SCENE_6
+  - first:
+      213: -5021228007285976011
+    second: ENV ASSETS FOREST SCENE_7
+  - first:
+      213: 1239192535336278268
+    second: ENV ASSETS FOREST SCENE_8
+  - first:
+      213: 7737056090875693230
+    second: ENV ASSETS FOREST SCENE_9
+  - first:
+      213: -7989693521181619775
+    second: ENV ASSETS FOREST SCENE_10
+  - first:
+      213: 8142049353176485021
+    second: ENV ASSETS FOREST SCENE_11
+  - first:
+      213: -8687860249444294525
+    second: ENV ASSETS FOREST SCENE_12
+  - first:
+      213: 6839111580921599145
+    second: ENV ASSETS FOREST SCENE_13
+  - first:
+      213: 7466175150349809625
+    second: ENV ASSETS FOREST SCENE_14
+  - first:
+      213: -5811217574196148306
+    second: ENV ASSETS FOREST SCENE_15
+  - first:
+      213: -8346792250803755914
+    second: ENV ASSETS FOREST SCENE_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +91,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +122,402 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_0
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 2873
+        height: 2274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074812f28f130d110800000000000000
+      internalID: 1283580835812967536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_1
+      rect:
+        serializedVersion: 2
+        x: 3316
+        y: 1627
+        width: 448
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5354d785d60416d10800000000000000
+      internalID: 2117044138221061429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_2
+      rect:
+        serializedVersion: 2
+        x: 3962
+        y: 1627
+        width: 448
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ae48cbc36d01e40800000000000000
+      internalID: 5625231490934958719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_3
+      rect:
+        serializedVersion: 2
+        x: 4570
+        y: 1625
+        width: 447
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefa6ec9d15ad2a40800000000000000
+      internalID: 5345109879363645418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_4
+      rect:
+        serializedVersion: 2
+        x: 5293
+        y: 1503
+        width: 588
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6828bd8e388aea10800000000000000
+      internalID: 1939512391783426157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_5
+      rect:
+        serializedVersion: 2
+        x: 5973
+        y: 1513
+        width: 971
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053a37734e7fa96f0800000000000000
+      internalID: -676956234410908848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_6
+      rect:
+        serializedVersion: 2
+        x: 5736
+        y: 1501
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba2192e6e383cf20800000000000000
+      internalID: 3441739567908072127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_7
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 826
+        width: 221
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5341a712bb3015ab0800000000000000
+      internalID: -5021228007285976011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_8
+      rect:
+        serializedVersion: 2
+        x: 3885
+        y: 829
+        width: 201
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8d80d9b0f723110800000000000000
+      internalID: 1239192535336278268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_9
+      rect:
+        serializedVersion: 2
+        x: 4206
+        y: 826
+        width: 403
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea80bef958b8f5b60800000000000000
+      internalID: 7737056090875693230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_10
+      rect:
+        serializedVersion: 2
+        x: 4709
+        y: 820
+        width: 498
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9cabdd218ee1190800000000000000
+      internalID: -7989693521181619775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_11
+      rect:
+        serializedVersion: 2
+        x: 5549
+        y: 1058
+        width: 144
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c88cf8fbe5ef070800000000000000
+      internalID: 8142049353176485021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_12
+      rect:
+        serializedVersion: 2
+        x: 5908
+        y: 211
+        width: 1022
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380e2a522258e6780800000000000000
+      internalID: -8687860249444294525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_13
+      rect:
+        serializedVersion: 2
+        x: 3461
+        y: 275
+        width: 314
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a497186fb769ee50800000000000000
+      internalID: 6839111580921599145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_14
+      rect:
+        serializedVersion: 2
+        x: 4067
+        y: 286
+        width: 258
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7f273edbe2d9760800000000000000
+      internalID: 7466175150349809625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_15
+      rect:
+        serializedVersion: 2
+        x: 4831
+        y: 228
+        width: 350
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea70889c7686a5fa0800000000000000
+      internalID: -5811217574196148306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENV ASSETS FOREST SCENE_16
+      rect:
+        serializedVersion: 2
+        x: 5327
+        y: 190
+        width: 570
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674ebdccbac3a2c80800000000000000
+      internalID: -8346792250803755914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -31,13 +31,13 @@ public class PlayerCombat : MonoBehaviour
 
         Debug.Log("AttackMade");
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        /* Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<HitboxCode>().holder.DamageTaken(damage);
+            enemy.GetComponent<HitboxCode>().holder.OnHit(this.transform.position, damage);
         }
-
+        */
     }
     
     void OnDrawGizmosSelected()
@@ -46,5 +46,14 @@ public class PlayerCombat : MonoBehaviour
         return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    public void Attacking()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<HitboxCode>().holder.OnHit(this.transform.position, damage);
+        }
     }
 }
