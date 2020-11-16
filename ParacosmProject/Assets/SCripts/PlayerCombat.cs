@@ -5,15 +5,18 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Transform attackPoint;
+    public Transform attackPointRight;
+    public Transform attackPointLeft;
     public float attackRange;
     public LayerMask enemyLayers;
     public int damage;
  
     public Animator animator;
+    public SpriteRenderer _spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -22,7 +25,15 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Attack();
-        }    
+        } 
+        if(_spriteRenderer.flipX == true)
+        {
+            attackPoint = attackPointLeft;
+        }
+        else
+        {
+            attackPoint = attackPointRight;
+        }
     }
 
     void Attack()
@@ -45,7 +56,8 @@ public class PlayerCombat : MonoBehaviour
         if (attackPoint == null)
         return;
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPointLeft.position, attackRange);
+        Gizmos.DrawWireSphere(attackPointRight.position, attackRange);
     }
     public void Attacking()
     {
