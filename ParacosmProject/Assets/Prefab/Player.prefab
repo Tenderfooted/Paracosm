@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090614354859245093}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 76.36719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a030c23218113764fb004397804fab58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f335c11e7b8090847b5ba732c160c928, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.6333333, y: 3.7916667}
+  m_Size: {x: 2.02, y: 3.0666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -138,30 +138,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a155f66fc0eb0814cb0739d96d824a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 8411665472702243975}
   _spriteRenderer: {fileID: 0}
   raycastOrigin: {fileID: 2594808430960636843}
   Ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   raycastDistance: 0.05
-  MoveSpeed: 14
-  JumpStrength: 20
-  MoveSpeedLimiter: 0
-  health: 0
-  maxhealth: 0
-  healthsprites: []
-  healthfull: {fileID: 0}
-  healthempty: {fileID: 0}
-  dashsprites: []
-  dashfull: {fileID: 0}
-  dashempty: {fileID: 0}
-  defaultGravScale: 3
-  floatGrav: 0.086
-  airDashCount: 1
+  MoveSpeed: 12
+  JumpStrength: 18
+  MoveSpeedLimiter: 1.5
+  health: 3
+  maxhealth: 3
+  healthsprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  healthfull: {fileID: -5647172189804981704, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
+    type: 3}
+  healthempty: {fileID: -6178039043152069338, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
+    type: 3}
+  dashsprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dashfull: {fileID: -3926788418654777023, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
+    type: 3}
+  dashempty: {fileID: -6178039043152069338, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
+    type: 3}
+  defaultGravScale: 4
+  floatGrav: 0.8
+  airDashCount: 3
   groundDrag: 5
-  airDrag: 0
-  dashStrength: 50
+  airDrag: 0.5
+  dashStrength: 13
 --- !u!95 &8411665472702243975
 Animator:
   serializedVersion: 3
@@ -199,8 +215,8 @@ MonoBehaviour:
   attackRange: 1.8
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
-  damage: 3
+    m_Bits: 512
+  damage: 1
   animator: {fileID: 8411665472702243975}
   _spriteRenderer: {fileID: 0}
 --- !u!1 &5916812905767015913

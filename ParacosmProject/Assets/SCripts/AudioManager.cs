@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager audioInstance;
+    public static AudioManager instance;
 
     public AudioSource currentAudio; // this is the current soundtrack that is playing
     //public  AudioSource newAudio; //  this is the new Audio to load
@@ -12,13 +12,13 @@ public class AudioManager : MonoBehaviour
     private AudioSource holdAudio;
     void Awake()
     {
-        if (audioInstance != null)
+        if (instance != null)
         {
             Destroy (gameObject);
         }
         else
         {
-            audioInstance = this;
+            instance = this;
             Debug.Log("audiomanager instance set");
             DontDestroyOnLoad(gameObject);
         }

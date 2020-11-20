@@ -16,8 +16,8 @@ public class SoundtrackPost : MonoBehaviour
     {
         if(coll.gameObject.CompareTag("Player"))
         {
-            AudioManager.audioInstance.newClip = clip;
-            AudioManager.audioInstance.LoadSoundtrack();
+            AudioManager.instance.newClip = clip;
+            AudioManager.instance.LoadSoundtrack();
         }
     }
 }

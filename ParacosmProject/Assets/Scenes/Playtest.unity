@@ -1584,12 +1584,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1540391414}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &430428277 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8411665472702243975, guid: f932984e1701df248a41f3eb9197ae1a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1540391414}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &430428279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
@@ -3760,152 +3754,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.0666666
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846597367074230576, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f335c11e7b8090847b5ba732c160c928,
-        type: 3}
-    - target: {fileID: 4173690260871438649, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: enemyLayers.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 4173690260871438649, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: dashsprites.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 430428277}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: dashStrength
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: floatGrav
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: JumpStrength
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: MoveSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: airDrag
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: maxhealth
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: health
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 1957699055}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[5]
-      value: 
-      objectReference: {fileID: 1928318509}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[6]
-      value: 
-      objectReference: {fileID: 398666705}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[7]
-      value: 
-      objectReference: {fileID: 1243888933}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[8]
-      value: 
-      objectReference: {fileID: 1957699055}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[9]
-      value: 
-      objectReference: {fileID: 1928318509}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[10]
-      value: 
-      objectReference: {fileID: 398666705}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: healthsprites.Array.data[11]
-      value: 
-      objectReference: {fileID: 1243888933}
     - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
         type: 3}
       propertyPath: healthsprites.Array.data[0]
@@ -3928,31 +3776,24 @@ PrefabInstance:
       objectReference: {fileID: 672365401}
     - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
         type: 3}
-      propertyPath: healthfull
+      propertyPath: healthsprites.Array.data[4]
       value: 
-      objectReference: {fileID: -5647172189804981704, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
-        type: 3}
+      objectReference: {fileID: 1957699055}
     - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
         type: 3}
-      propertyPath: healthempty
+      propertyPath: healthsprites.Array.data[5]
       value: 
-      objectReference: {fileID: -6178039043152069338, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
-        type: 3}
+      objectReference: {fileID: 1928318509}
     - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
         type: 3}
-      propertyPath: Ground.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
+      propertyPath: healthsprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 398666705}
     - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
         type: 3}
-      propertyPath: MoveSpeedLimiter
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: airDashCount
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: healthsprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 1243888933}
     - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
         type: 3}
       propertyPath: dashsprites.Array.data[0]
@@ -3973,23 +3814,6 @@ PrefabInstance:
       propertyPath: dashsprites.Array.data[3]
       value: 
       objectReference: {fileID: 757743865}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: dashfull
-      value: 
-      objectReference: {fileID: -3926788418654777023, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
-        type: 3}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: dashempty
-      value: 
-      objectReference: {fileID: -6178039043152069338, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
-        type: 3}
-    - target: {fileID: 7508251305334726504, guid: f932984e1701df248a41f3eb9197ae1a,
-        type: 3}
-      propertyPath: defaultGravScale
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f932984e1701df248a41f3eb9197ae1a, type: 3}
 --- !u!1 &1566282671
