@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ParacosmProject/Assets/Audio.meta
 guid: 342822f3cf94b3249b7c69854b1719d7
+=======
+guid: bc2203064ca56d04e9252184fcdd4209
+>>>>>>> 3491a34a036510aaac200348b86276e74128f766:ParacosmProject/Assets/AudioManager.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
