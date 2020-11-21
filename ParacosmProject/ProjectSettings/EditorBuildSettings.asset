@@ -11,16 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OldScenes/MainMenu.unity
     guid: 4dbde8e3377f0304f82cf004b3f84b67
-  - enabled: 1
+  - enabled: 0
     path: Assets/Prefab/trailer Scenes/DayScene.unity
     guid: b4716a326752f734bb909afee00a0d58
-  - enabled: 1
+  - enabled: 0
     path: Assets/Prefab/trailer Scenes/NightScene.unity
     guid: 9874313d9e510ac48a1106a481f2c285
-  - enabled: 1
+  - enabled: 0
     path: Assets/Prefab/trailer Scenes/ForestScene.unity
     guid: a45f08b657081f3408556a7163dbfd79
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playtest.unity
     guid: 8e106c7b6bd9d864d86ef205a4bd40cb
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 97ff028cacec30a4e87aad115c00abf3
+  - enabled: 1
+    path: Assets/Scenes/FIRST LEVEL SCENE.unity
+    guid: 93b2bb48851eca445909d4a3b8be1c34
   m_configObjects: {}

@@ -32,7 +32,10 @@ public class EnemySylph : EnemyClass
 
     public override void HealthCheck()
     {
-
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     public override void Movement()
     {
@@ -91,12 +94,12 @@ public class EnemySylph : EnemyClass
     {
         while(transform.localScale.x > (0.5f * scaleX ))
         {
-            transform.localScale = transform.localScale - new Vector3(0.01f,0,0);
+            transform.localScale = transform.localScale - new Vector3(0.05f,0,0);
             yield return 0;
         }
         while(transform.localScale.x < (1.0f* scaleX ))
         {
-            transform.localScale = transform.localScale + new Vector3(0.01f,0,0);
+            transform.localScale = transform.localScale + new Vector3(0.05f,0,0);
             yield return 0;
         }
         isShrinking = false;

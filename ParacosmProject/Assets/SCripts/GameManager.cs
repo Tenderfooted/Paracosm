@@ -178,6 +178,10 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         player.transform.position = savedata.playerloc;
     }
+    public void LoadNext()
+    {
+        SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
 public class SaveData
 {
