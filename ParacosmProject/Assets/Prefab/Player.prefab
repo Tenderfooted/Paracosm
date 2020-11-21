@@ -146,7 +146,7 @@ MonoBehaviour:
     m_Bits: 256
   raycastDistance: 0.05
   MoveSpeed: 12
-  JumpStrength: 18
+  JumpStrength: 25
   MoveSpeedLimiter: 1.5
   health: 3
   maxhealth: 3
