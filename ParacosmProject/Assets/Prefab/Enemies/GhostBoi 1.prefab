@@ -99,9 +99,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012664795, y: -0.09811878}
+  m_Offset: {x: 0.5480709, y: -0.09811878}
   serializedVersion: 2
-  m_Radius: 8.72654
+  m_Radius: 13.334291
 --- !u!114 &6254086353328215899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 6254086354147992288}
   - component: {fileID: 6254086354147992290}
   - component: {fileID: 6254086354147992289}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: GhostHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

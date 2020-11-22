@@ -66,6 +66,15 @@ public class EnemyGhost : EnemyClass
         }
     }
 
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            hunting = false;
+            animator.SetBool("hunting", false);
+            Debug.Log("hunting stopped");
+        }
+    }
     public void DamageTaken(int damage)
     {
         health = health - damage;
@@ -105,7 +114,7 @@ public class EnemyGhost : EnemyClass
                 hunting = false;
                 animator.SetBool("hunting", false);
             } */
-            if ( move.magnitude < 0.5f)
+            if ( move.magnitude < 1f)
             {
                 playerscript.health = playerscript.health - 1;
                 isfrozen = true;

@@ -134,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
             isFloat = false;
             animator.SetBool("IsJump", false);
             _rigidbody.gravityScale = defaultGravScale;
+            currentDash = airDashCount;
             //animator.SetBool("IsDash", false);
             
         }
@@ -164,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
            _rigidbody.AddForce(transform.up * (_Jump * JumpStrength), ForceMode2D.Impulse); 
             isFloat = true;
             reachGround = false;         
-            currentDash = airDashCount;
+            //currentDash = airDashCount;
             animator.SetBool("IsJump", true);
 
         }  

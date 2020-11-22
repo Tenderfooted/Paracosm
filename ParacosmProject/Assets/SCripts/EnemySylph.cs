@@ -17,6 +17,8 @@ public class EnemySylph : EnemyClass
 
     private bool isCharging = false;    // is used to make sure only one eemy charge coroutine is running at a time
     private bool isShrinking = false;   // is used to make sure only one enemy shrink on hit coroutine is happening.
+    private float hittimer = 0.0f;
+    public CutscenePlayer cutScene;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,16 @@ public class EnemySylph : EnemyClass
     {
         if(health <= 0)
         {
+            if(cutScene != null)
+            {
+                cutScene.flag = true; // this is just here for the cutscene
+            }
             Destroy(gameObject);
+        }
+        Vector3 dmgCheck = player.transform.position - transform.position;
+        if( hittimer > 0)
+        {
+            hittimer = hittimer - Time.deltaTime;
         }
     }
     public override void Movement()
@@ -52,7 +63,7 @@ public class EnemySylph : EnemyClass
     {
         health = health - damage;
         Vector3 dir = (transform.position - hitpos).normalized;
-        rb2d.AddForce( dir * (damage*30), ForceMode2D.Impulse);
+        //rb2d.AddForce( dir * (damage*30), ForceMode2D.Impulse); //removed damage bump as it causes issues
         if(isShrinking == false)
         {
             StartCoroutine(HitShrink());
@@ -103,5 +114,13 @@ public class EnemySylph : EnemyClass
             yield return 0;
         }
         isShrinking = false;
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.CompareTag("Player") && hittimer <= 0.1f)
+        {
+            playerscript.health = playerscript.health - 1;
+            hittimer = 2f;
+        }
     }
 }
