@@ -52,9 +52,10 @@ public class GameManager : MonoBehaviour
     }
     public void LaunchGame() 
     {
+        Time.timeScale = 1.0f;
         Debug.Log("Loading Scene!!!!!!!!!!!!!! <D:");
         SceneManager.LoadScene(1);                  // this will probably be shunted to a Load/save manager later when that exists :p
-        BattleScene.instance.gameObject.SetActive(false);       // wtf I dont need to tell it where to find the battleScene? I dont remember making it static..
+        //BattleScene.instance.gameObject.SetActive(false);       // wtf I dont need to tell it where to find the battleScene? I dont remember making it static..
     }
       public void Pause()
     {
@@ -118,6 +119,11 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }   
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1.0f;
+    }
 
     // Set up and plan code for save function here
     // load method that reads a json file for two numbers, first the build of the level to load, and secondly the number of the checkpoint to spawn the player at :/
@@ -131,7 +137,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("loading");
         string json;
-        json = File.ReadAllText(Application.dataPath+"/saves/savedata.json");
+        json = File.ReadAllText(Application.persistentDataPath+"/savedata.json");
         savedata = JsonUtility.FromJson<SaveData>(json);
         Debug.Log(savedata.playerloc);
         Debug.Log(savedata.buildnum);
@@ -155,8 +161,8 @@ public class GameManager : MonoBehaviour
         savedata.playerloc = player.transform.position;
         savedata.checkpoint = storedcheckpointlocation;
         string json = JsonUtility.ToJson(savedata);
-        //File.WriteAllText(Application.dataPath+"/saves/savedata.json",json);
-        File.WriteAllText(Application.persistentDataPath, json);
+        File.WriteAllText(Application.persistentDataPath+"/savedata.json",json);
+        //File.WriteAllText(Application.persistentDataPath, json);
 
     }
     public void CheckpointLoad(Vector3 checkpointlocation) // this is to force save the players last checkpoint location so they will spawn there when they die

@@ -27,6 +27,7 @@ public class EnemyClass : MonoBehaviour
     }
     public virtual void Movement()      // this controls the characters Movement
     {
+
     }
     public virtual void HealthCheck() // this controls the health system for the Enemy
     {
@@ -40,4 +41,5 @@ public class EnemyClass : MonoBehaviour
     {
         
     }
+  
 }

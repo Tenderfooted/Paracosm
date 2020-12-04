@@ -41,7 +41,7 @@ public class PlatfromMovement : MonoBehaviour
                 chargestart = Time.time; // records the start of the charge so that the platform can be interpolated between the its pos and the players
                 fractionOfJourney = 0f;
                 movestarting = false;
-                Debug.Log("charging");
+                //Debug.Log("charging");
             }
             //animator.SetBool("isCharge",true);
             //Quaternion rotation = Quaternion.LookRotation(target - startPosition, Vector3.up);

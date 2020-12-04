@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     //public  AudioSource newAudio; //  this is the new Audio to load
     public AudioClip newClip;
     private AudioSource holdAudio;
+    public float musicVolumeMax = 1f ;
     void Awake()
     {
         if (instance != null)
@@ -49,13 +50,17 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(SoundSwap());
         
     }
+    public void VolumeUpdate()
+    {
+        currentAudio.volume = musicVolumeMax;
+    }
     IEnumerator SoundSwap()
     {
         // ramps one soundtrack down, ramps up the next and then sets the new soundtrack to be equal to the old one
         // turns down the audio of the first soundtrack by 1 each frame until reaches 0 then stops it
         while(currentAudio.volume > 0.0f)
         {
-            currentAudio.volume = currentAudio.volume - 0.01f;
+            currentAudio.volume = currentAudio.volume - 0.005f;
             yield return 0;
             //wait a frame here
         }
@@ -64,12 +69,13 @@ public class AudioManager : MonoBehaviour
         currentAudio.clip = newClip;
         
         currentAudio.Play();
-        //newAudio.volume = 0.0f;
+        currentAudio.volume = 0.0f;
 
         // plays the audio then turns it up from 0 turns up the audio of the second soundtrack by 1 each frame once the first one is done
-        while(currentAudio.volume <1.0f)
+        while(currentAudio.volume < musicVolumeMax)
         {
-            currentAudio.volume = currentAudio.volume + 0.01f;
+            Debug.Log("Audio turning up");
+            currentAudio.volume = currentAudio.volume + 0.005f;
             yield return 0;
             //wait frame here
         }

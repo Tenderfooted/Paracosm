@@ -22,6 +22,7 @@ public class GemCollection : MonoBehaviour
         {
             gemsCollected++ ;
             Destroy(gameObject);
+            Debug.Log("Gem Collected");
         }
     }
 }

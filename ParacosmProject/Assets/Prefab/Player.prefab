@@ -146,7 +146,7 @@ MonoBehaviour:
     m_Bits: 256
   raycastDistance: 0.05
   MoveSpeed: 12
-  JumpStrength: 25
+  JumpStrength: 26
   MoveSpeedLimiter: 1.5
   health: 3
   maxhealth: 3
@@ -173,11 +173,11 @@ MonoBehaviour:
   dashempty: {fileID: -6178039043152069338, guid: 40240ddb6c8e4244c84f2d1a3e365da4,
     type: 3}
   defaultGravScale: 4
-  floatGrav: 0.8
-  airDashCount: 3
+  floatGrav: 0.77
+  airDashCount: 2
   groundDrag: 5
   airDrag: 0.5
-  dashStrength: 13
+  dashStrength: 12
 --- !u!95 &8411665472702243975
 Animator:
   serializedVersion: 3

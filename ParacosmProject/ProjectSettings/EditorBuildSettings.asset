@@ -26,7 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 97ff028cacec30a4e87aad115c00abf3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FIRST LEVEL SCENE.unity
     guid: 93b2bb48851eca445909d4a3b8be1c34
+  - enabled: 1
+    path: Assets/Scenes/FIRST LEVEL SCENE Edit.unity
+    guid: 253c708acf5bafd4390d1608ab191740
   m_configObjects: {}
